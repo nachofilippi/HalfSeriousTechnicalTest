@@ -1,4 +1,5 @@
 import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 //Services
 import { PeopleService } from '../../providers/services/people.service';
@@ -29,7 +30,10 @@ export interface PeopleElement {
 })
 export class PeoplePage implements AfterViewInit {
   peopleElements!: PeopleElement[];
-  pageIndex = 0;
+  pageIndex = 1;
+  characterKey = 3;
+  hasPrev = null;
+  hasNext = 'true';
   isLoadingResults = true;
   columns = [
     {
@@ -39,12 +43,12 @@ export class PeoplePage implements AfterViewInit {
     },
     {
       columnDef: 'mass',
-      header: 'Weight',
+      header: 'Weight (kg)',
       cell: (element: PeopleElement) => `${element.mass}`
     },
     {
       columnDef: 'height',
-      header: 'Height',
+      header: 'Height (cm)',
       cell: (element: PeopleElement) => `${element.height}`
     },
     {
@@ -66,26 +70,40 @@ export class PeoplePage implements AfterViewInit {
   ];
   displayedColumns = this.columns.map(c => c.columnDef);
 
-  constructor(public peopleService: PeopleService) {
-  }
+  constructor(
+    public peopleService: PeopleService,
+    public router: Router,
+  ) { }
 
   ngAfterViewInit() {
-    this.getPeople();
+    this.getPeople(this.pageIndex);
   }
 
-  getPeople() {
-    this.peopleService.getAllPeople(this.pageIndex + 1)
-        .subscribe((peopleContent) => {
-      this.peopleElements = peopleContent.results;
+  getPeople(pageIndex: number) {
+    this.peopleService.getAllPeople(pageIndex)
+        .subscribe((data) => {
+      console.log(data);
+      this.peopleElements = data.results;
+      this.hasPrev = data.previous;
+      this.hasNext = data.next;
       this.isLoadingResults = false;
     });
   }
 
   nextPage() {
-    console.log('next');
+    this.isLoadingResults = true;
+    this.pageIndex++;
+    this.getPeople(this.pageIndex);
   }
 
   previousPage() {
-    console.log('prev');
+    this.isLoadingResults = true;
+    this.pageIndex--;
+    this.getPeople(this.pageIndex);
+  }
+
+  openPeople(selection: any) {
+    console.log(selection);
+    // this.router.navigateByUrl('/character' + this.characterKey);
   }
 }

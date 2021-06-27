@@ -31,11 +31,15 @@
 
   &-pagination {
     align-items: center;
+    background: #424242;
     border-radius: 0 0 8px 8px;
     display: flex;
     justify-content: flex-end;
+    padding: 15px;
 
-    p {
+    &-page {
+      color: white;
+      font-size: 15px;
       margin: 0 20px;
     }
   }
@@ -43,8 +47,18 @@
   &-buttons {
     display: flex;
   }
+
+  &-btn {
+    margin: auto 5px;
+  }
+
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+
+  .mat-row:hover .mat-cell {
+    background: #565656;
+  }
 }
-
-
-
-
