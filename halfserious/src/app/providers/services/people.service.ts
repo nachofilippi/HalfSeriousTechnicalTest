@@ -25,8 +25,8 @@ export class PeopleService {
     private http: HttpClient
   ) {}
 
-  getAllPeople(): Observable < any > {
-    return this.http.get(this.baseUrl + '/people', {}).pipe(
+  getAllPeople(_page: Number): Observable < any > {
+    return this.http.get(this.baseUrl + '/people/?page=' + _page, {}).pipe(
       map(
         (data: any) => {
           console.log(data);

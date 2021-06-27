@@ -1,1 +1,29 @@
-<h1>works</h1>
+<div class="mat-elevation-z8 people-container">
+  <div class="people-container-loading-shade"
+      *ngIf="isLoadingResults">
+    <mat-spinner color="accent" *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div class="people-container-table">
+    <table mat-table [dataSource]="peopleElements">
+
+      <ng-container [matColumnDef]="col.columnDef" *ngFor="let col of columns">
+        <th mat-header-cell *matHeaderCellDef> {{col.header}} </th>
+        <td mat-cell *matCellDef="let element"> {{col.cell(element)}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  <div class="people-container-pagination d-flex">
+    <p>Page: <span>{{pageIndex}}</span></p>
+    <div class="people-container-buttons">
+      <button mat-stroked-button color="accent" (click)="previousPage()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_left</mat-icon>
+      </button>
+      <button mat-stroked-button color="accent" (click)="nextPage()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_right</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

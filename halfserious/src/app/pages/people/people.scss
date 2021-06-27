@@ -1,0 +1,50 @@
+.people-container {
+  border-radius: 8px;
+  margin: 50px 20px;
+  position: relative;
+
+  &-loading-shade {
+    align-items: center;
+    background: #424242;
+    bottom: 56px;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 56px;
+    z-index: 1;
+  }
+
+  &-table {
+    border-radius: 8px 8px 0 0;
+    max-height: 800px;
+    min-height: 530px;
+    overflow: auto;
+    position: relative;
+  }
+
+  table {
+    height: 100%;
+    width: 100%;
+  }
+
+  &-pagination {
+    align-items: center;
+    border-radius: 0 0 8px 8px;
+    display: flex;
+    justify-content: flex-end;
+
+    p {
+      margin: 0 20px;
+    }
+  }
+
+  &-buttons {
+    display: flex;
+  }
+}
+
+
+
+
