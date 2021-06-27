@@ -1,0 +1,28 @@
+<button mat-fab color="accent" [routerLink]="'/people'"
+    aria-label="Back button">
+  <mat-icon>arrow_left</mat-icon>
+</button>
+<div class="character-page">
+  <mat-card class="character-container">
+    <div class="character-container-loading-shade"
+        *ngIf="isLoadingResults">
+      <mat-spinner color="accent" *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <mat-card-header *ngIf="!isLoadingResults">
+      <img src="../../../assets/img/sw-logo.png" alt="StarWars Logo" class="logo-image-sw">
+      <mat-card-title>{{character.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content *ngIf="!isLoadingResults">
+      <img src="../../../assets/img/poster-sw.png" alt="StarWars Bg" class="logo-image">
+      <h3 class="more-features-title">More features:</h3>
+      <p class="more-features">Skin color: <span>{{character.skin_color}}</span></p>
+      <p class="more-features">Weight: <span>{{character.mass}}</span></p>
+      <p class="more-features">Height: <span>{{character.height}}</span></p>
+      <p class="more-features">Gender: <span>{{character.gender}}</span></p>
+      <h3 class="more-features-moredescription">Description:</h3>
+      <p class="more-features-description">
+        {{character.name}} was born in {{character.birth_year}}, {{character.name}} has {{character.eye_color}} eyes and {{character.hair_color}} hair.
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

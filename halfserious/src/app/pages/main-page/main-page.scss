@@ -1,0 +1,30 @@
+.main-page {
+  align-items: center;
+  display: flex;
+  height: 500px;
+  justify-content: space-around;
+  width: 100%;
+
+  .mat-raised-button {
+    background-color: #c7c7c7;
+  }
+
+  &-option {
+    height: auto;
+    padding: 25px;
+    width: 380px;
+
+    &-character {
+      max-width: 180px;
+      min-width: 180px;
+      padding: 25px 120px;
+    }
+
+    &-title {
+      color: #ffe81a;
+      font-size: 40px;
+      font-weight: bolder;
+      text-shadow: 3px 1px black, 0 3px black, 1px 3px black, 0 0px black;
+    }
+  }
+}

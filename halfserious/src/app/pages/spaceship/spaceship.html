@@ -2,13 +2,13 @@
     aria-label="Back button">
   <mat-icon>arrow_left</mat-icon>
 </button>
-<div class="mat-elevation-z8 people-container">
-  <div class="people-container-loading-shade"
+<div class="mat-elevation-z8 starship-container">
+  <div class="starship-container-loading-shade"
       *ngIf="isLoadingResults">
     <mat-spinner color="accent" *ngIf="isLoadingResults"></mat-spinner>
   </div>
-  <div class="people-container-table">
-    <table mat-table [dataSource]="peopleElements">
+  <div class="starship-container-table">
+    <table mat-table [dataSource]="spaceshipElements">
 
       <ng-container [matColumnDef]="col.columnDef" *ngFor="let col of columns">
         <th mat-header-cell *matHeaderCellDef>{{col.header}}</th>
@@ -17,16 +17,16 @@
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-          (click)="openPeople(row)"></tr>
+          (click)="openStarship(row)"></tr>
     </table>
   </div>
-  <div class="people-container-pagination d-flex">
-    <p class="people-container-pagination-page">
+  <div class="starship-container-pagination d-flex">
+    <p class="starship-container-pagination-page">
       Page: <span>{{pageIndex}}</span>
     </p>
-    <div class="people-container-buttons">
+    <div class="starship-container-buttons">
       <button mat-stroked-button color="accent"
-          class="people-container-btn"
+          class="starship-container-btn"
           [disabled]="!hasPrev"
           (click)="previousPage()">
         <mat-icon aria-hidden="false" aria-label="Example home icon">
@@ -34,7 +34,7 @@
         </mat-icon>
       </button>
       <button mat-stroked-button color="accent"
-          class="people-container-btn"
+          class="starship-container-btn"
           [disabled]="!hasNext"
           (click)="nextPage()">
         <mat-icon aria-hidden="false" aria-label="Example home icon">

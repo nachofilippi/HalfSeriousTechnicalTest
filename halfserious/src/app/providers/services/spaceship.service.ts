@@ -19,14 +19,14 @@ import {
 @Injectable({
   providedIn: 'root'
 })
-export class PeopleService {
+export class SpaceshipService {
   private baseUrl = environment.baseUrl;
   constructor(
     private http: HttpClient
   ) {}
 
-  getAllPeople(page: Number): Observable < any > {
-    return this.http.get(this.baseUrl + '/people/?page=' + page, {}).pipe(
+  getAllSpaceships(page: Number): Observable < any > {
+    return this.http.get(this.baseUrl + '/starships/?page=' + page, {}).pipe(
       map(
         (data: any) => {
           if (data) {
@@ -45,8 +45,8 @@ export class PeopleService {
     );
   }
 
-  getCharacter(id: string) {
-    return this.http.get(this.baseUrl + '/people/' + id, {}).pipe(
+  getSpaceship(id: string) {
+    return this.http.get(this.baseUrl + '/starships/' + id, {}).pipe(
       map(
         (data: any) => {
           if (data) {

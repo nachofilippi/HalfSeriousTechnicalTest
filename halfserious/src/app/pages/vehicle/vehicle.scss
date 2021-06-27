@@ -1,0 +1,95 @@
+.vehicle-page {
+  background: black;
+  border-radius: 20px;
+  box-shadow: 20px 30px 19px -1px rgb(0 0 0 / 20%), 0px 2px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  margin: 30px auto;
+  padding: 20px;
+  width: 325px;
+}
+
+.mat-fab {
+  background-color: #ffe81a;
+  margin: 20px 20px 0;
+  position: absolute;
+  top: 40px;
+  z-index: 0;
+}
+
+.vehicle-container {
+  background:linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),url('../../../assets/img/starWars-card-bg.jpeg');
+  border-radius: 10px;
+  min-height: 500px;
+  position: relative;
+
+  &-loading-shade {
+    align-items: center;
+    background: unset;
+    bottom: 56px;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 56px;
+    z-index: 1;
+  }
+
+  mat-card-header {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    mat-card-title {
+      color: #ffe81a;
+      font-size: 22px;
+      font-weight: bolder;
+      margin: 0;
+      text-align: end;
+      text-shadow: 3px 1px black, 0 3px black, 1px 3px black, 0 0px black;
+    }
+  }
+
+  .logo-image {
+    border-radius: 17px;
+    box-shadow: 36px 28px 48px 22px #00000082 inset;
+    height: 100%;
+    width: 100%;
+
+    &-sw {
+      height: 50px;
+      width: 100px;
+    }
+  }
+
+  .more-features {
+    border-bottom: 3px solid black;
+    box-shadow: 0px 2px 0px #5a5a5a;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+
+    &-title {
+      color: #f5f3de;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 10px 0;
+      text-shadow: 3px 1px black, 0 3px black, 1px 3px black, 0 0px black;
+    }
+
+    &-moredescription {
+      color: black;
+      font-size: 12px;
+      margin: 0;
+      text-decoration: underline;
+    }
+
+    &-description {
+      color: black;
+      font-size: 12px;
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+}

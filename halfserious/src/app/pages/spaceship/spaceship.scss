@@ -1,4 +1,4 @@
-.people-container {
+.starship-container {
   border-radius: 8px;
   margin: 50px 20px;
   position: relative;
@@ -17,6 +17,7 @@
   }
 
   &-table {
+    background: #424242;
     border-radius: 8px 8px 0 0;
     max-height: 800px;
     min-height: 530px;

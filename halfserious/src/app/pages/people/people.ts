@@ -4,24 +4,8 @@ import { Router } from '@angular/router';
 //Services
 import { PeopleService } from '../../providers/services/people.service';
 
-export interface PeopleElement {
-  birth_year: string;
-  created: string;
-  edited: string;
-  eye_color: string;
-  films: Array<string>;
-  gender: string;
-  hair_color: string;
-  height: string;
-  homeworld: string;
-  mass: string;
-  name: string;
-  skin_color: string;
-  species: Array<string>;
-  starships: Array<string>;
-  url: string;
-  vehicles: Array<string>;
-}
+// Interfaces
+import { PeopleElement } from '../../interfaces/people.interface';
 
 @Component({
   selector: 'page-people',
@@ -103,7 +87,7 @@ export class PeoplePage implements AfterViewInit {
   }
 
   openPeople(selection: any) {
-    console.log(selection);
-    // this.router.navigateByUrl('/character' + this.characterKey);
+    const characterId = selection.url.split('/')[5];
+    this.router.navigate(['/character', characterId]);
   }
 }

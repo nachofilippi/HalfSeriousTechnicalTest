@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CharacterPage } from "./character";
-import { CharacterPageRoutingModule } from './character-routing.module';
+import { VehiclePage } from "./vehicle";
+import { VehiclePageRoutingModule } from './vehicle-routing.module';
 
 // Material
 import { MatCardModule } from '@angular/material/card';
@@ -13,13 +13,13 @@ import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   imports: [
     CommonModule,
-    CharacterPageRoutingModule,
+    VehiclePageRoutingModule,
     MatCardModule,
     MatProgressSpinnerModule,
     MatButtonModule,
     MatIconModule,
   ],
-  declarations: [CharacterPage],
+  declarations: [VehiclePage],
   entryComponents: [],
 })
-export class CharacterModule {}
+export class VehicleModule {}
